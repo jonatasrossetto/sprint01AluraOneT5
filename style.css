@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+}
+
+header{
+    width: 100%;
+    height: 72px;
+    background: #F3F5FC;
+}
+
+header img{
+    margin-top: 12px;    
+    margin-left: 84px;
+}
+
+.container {
+    display: flex; 
+    height: calc(100vh);
+}
+.esquerda {
+    padding-top: 2vw;
+    background: #F3F5FC;
+    width: 70vw;
+}
+
+.direita {
+    background: #F3F5FC;
+    width: 30vw;
+    text-align: center;
+}
+
+.controle {
+    margin-top: 2vh;
+    margin-left: 15vw;    
+}
+
+.controle button{
+    border-radius: 5px;
+    border: 0;
+    width: 20vw;
+    height: 10vh;
+    background: #0A3871;
+    color: #F3F5FC;
+}
+
+#inputTexto {
+    margin-left: 15vw;
+    width: 40vw; 
+    height: 50vh;
+    padding: 10px;
+    background: #F3F5FC;
+    border-radius: 10px;
+    border: 0;
+}
+
+
+
+.teste {
+    margin-left: 15vw;
+}
+
+#inputTexto:hover{
+    background: lightsteelblue;
+}
