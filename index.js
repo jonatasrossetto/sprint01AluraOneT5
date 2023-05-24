@@ -1,8 +1,9 @@
 let btnEncode = document.getElementById('btnEncode');
 let btnDecode = document.getElementById('btnDecode');
+let btnCopiar = document.getElementById('btnCopiar');
 let inputTexto = document.getElementById('inputTexto');
 let displayTexto = document.getElementById('displayTexto');
-let funcao = document.getElementById('funcao');
+// let funcao = document.getElementById('funcao');
 let keys = [
   { k: 'a', v: 'ai' },
   { k: 'e', v: 'enter' },
@@ -13,15 +14,17 @@ let keys = [
 
 btnEncode.addEventListener('click', (e) => {
   e.preventDefault();
-  funcao.innerText = 'Encoded Text';
   displayTexto.innerText = encode(inputTexto.value);
-  navigator.clipboard.writeText(displayTexto.innerText); //copia para o clipboard
+  // navigator.clipboard.writeText(displayTexto.innerText); //copia para o clipboard
 });
 
 btnDecode.addEventListener('click', (e) => {
   e.preventDefault();
-  funcao.innerText = 'Decoded Text';
   displayTexto.innerText = decode(inputTexto.value);
+  // navigator.clipboard.writeText(displayTexto.innerText); //copia para o clipboard
+});
+
+btnCopiar.addEventListener('click', (e) => {
   navigator.clipboard.writeText(displayTexto.innerText); //copia para o clipboard
 });
 
