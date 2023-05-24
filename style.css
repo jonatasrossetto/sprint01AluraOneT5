@@ -83,6 +83,8 @@ header img{
     border: 0;
     padding: 10px;
 
+    word-wrap: break-word;
+
 }
 
 .btn {
@@ -99,3 +101,4 @@ header img{
 .btn:hover{
     background: #356EA9;
 }
+

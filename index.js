@@ -3,7 +3,7 @@ let btnDecode = document.getElementById('btnDecode');
 let btnCopiar = document.getElementById('btnCopiar');
 let inputTexto = document.getElementById('inputTexto');
 let displayTexto = document.getElementById('displayTexto');
-// let funcao = document.getElementById('funcao');
+//guarda um dicionário de chaves e valores para substituição
 let keys = [
   { k: 'a', v: 'ai' },
   { k: 'e', v: 'enter' },
@@ -15,66 +15,28 @@ let keys = [
 btnEncode.addEventListener('click', (e) => {
   e.preventDefault();
   displayTexto.innerText = encode2(inputTexto.value);
-  // navigator.clipboard.writeText(displayTexto.innerText); //copia para o clipboard
 });
 
 btnDecode.addEventListener('click', (e) => {
   e.preventDefault();
   displayTexto.innerText = decode(inputTexto.value);
-  // navigator.clipboard.writeText(displayTexto.innerText); //copia para o clipboard
 });
 
 btnCopiar.addEventListener('click', (e) => {
   navigator.clipboard.writeText(displayTexto.innerText); //copia para o clipboard
 });
 
-function encode(texto) {
-  let encoded = '';
-  if (texto != '') {
-    for (let index = 0; index < texto.length; index++) {
-      let aux = '';
-      switch (texto[index]) {
-        case 'a':
-          aux = 'ai';
-          break;
-        case 'e':
-          aux = 'enter';
-          break;
-        case 'i':
-          aux = 'imes';
-          break;
-        case 'o':
-          aux = 'ober';
-          break;
-        case 'u':
-          aux = 'ufat';
-          break;
-        default:
-          aux = texto[index];
-          break;
-      }
-      encoded = encoded + aux;
-    }
-  } else {
-    encoded = 'texto vazio';
-  }
-  return encoded;
-}
-
 function encode2(texto) {
   let encoded = '';
   if (texto != '') {
     for (let index = 0; index < texto.length; index++) {
       let aux = texto[index];
-      console.log('aux: ' + aux);
       for (let i = 0; i < keys.length; i++) {
         if (texto[index] == keys[i].k) {
           aux = keys[i].v;
         }
       }
-      console.log('aux: ' + aux);
       encoded = encoded + aux;
-      console.log('encoded: ' + encoded);
     }
   } else {
     encoded = 'texto vazio';
